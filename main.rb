@@ -17,7 +17,7 @@ Parse.init :application_id => ENV['PARSE_APP_ID'],
            :api_key        => ENV['PARSE_API_KEY']
 
 BaseUrl = "http://www.keyakizaka46.com/mob/news/diarKijiShw.php?cd=report"
-ReportClassName = "KeyakizakaReport"
+ReportClassName = "Report"
 
 def get_all_report
   fetch_report { |data|
