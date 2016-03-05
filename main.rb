@@ -1,3 +1,4 @@
+require 'eventmachine'
 # URLにアクセスするためのライブラリを読み込む
 require 'open-uri'
 # HTMLをパースするためのライブラリを読み込む
@@ -100,4 +101,9 @@ def url_normalize url
   "http://www.keyakizaka46.com/mob/news/diarKijiShw.php?id=#{q_hash['id']}&cd=report"
 end
 
-get_all_report
+EM.run do
+  EM::PeriodicTimer.new(60) do
+    puts "routine work"
+    get_all_report
+  end
+end
