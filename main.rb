@@ -62,6 +62,7 @@ def push_notification result, data
            :_title => data[:title],
            :_url => data[:url],
            :_thumbnail_url => data[:thumbnail_url],
+           :_image_url_list => data[:image_url_list]
           }
   push = Parse::Push.new(pushdata)
   push.where = { :deviceType => "android" }
